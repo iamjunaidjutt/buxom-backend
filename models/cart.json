@@ -1,0 +1,66 @@
+[
+	{
+		"id": 1,
+		"products": [
+			{
+				"id": 1,
+				"title": "PLUMP SHOT LIP SERUM",
+				"price": 20,
+				"quantity": 3,
+				"total": 60,
+				"discountPercentage": 8.71,
+				"discountedPrice": 55,
+				"thumbnail": "https://cdn.dummyjson.com/product-images/59/thumbnail.jpg"
+			},
+			{
+				"id": 2,
+				"title": "LIP GLOSS",
+				"price": 15,
+				"quantity": 2,
+				"total": 30,
+				"discountPercentage": 8.71,
+				"discountedPrice": 27.4,
+				"thumbnail": "https://cdn.dummyjson.com/product-images/60/thumbnail.jpg"
+			},
+			{
+				"id": 3,
+				"title": "LIPSTICK",
+				"price": 25,
+				"quantity": 1,
+				"total": 25,
+				"discountPercentage": 8.71,
+				"discountedPrice": 22.85,
+				"thumbnail": "https://cdn.dummyjson.com/product-images/61/thumbnail.jpg"
+			},
+			{
+				"id": 4,
+				"title": "LIP LINER",
+				"price": 10,
+				"quantity": 2,
+				"total": 20,
+				"discountPercentage": 8.71,
+				"discountedPrice": 18.34,
+				"thumbnail": "https://cdn.dummyjson.com/product-images/62/thumbnail.jpg"
+			},
+			{
+				"id": 5,
+				"title": "LIP BALM",
+				"price": 10,
+				"quantity": 2,
+				"total": 20,
+				"discountPercentage": 8.71,
+				"discountedPrice": 18.34,
+				"thumbnail": "https://cdn.dummyjson.com/product-images/63/thumbnail.jpg"
+			}
+		],
+		"total": 155,
+		"discountPercentage": 8.71,
+		"discountedPrice": 141.5,
+		"userId": 1,
+		"status": "pending",
+		"totalProducts": 5,
+		"totalQuantity": 10,
+		"createdAt": "2021-07-01T12:00:00",
+		"updatedAt": "2021-07-01T12:00:00"
+	}
+]

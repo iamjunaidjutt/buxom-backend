@@ -1,0 +1,74 @@
+[
+	{
+		"id": 1,
+		"name": "John Doe",
+		"rating": 4.5,
+		"review": "Great service, very professional",
+		"date": "2020-01-01",
+		"image": "https://randomuser/1",
+		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	},
+	{
+		"id": 2,
+		"name": "Jane Doe",
+		"rating": 5,
+		"review": "Excellent service, very professional",
+		"date": "2020-01-01",
+		"image": "https://randomuser/2",
+		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	},
+	{
+		"id": 3,
+		"name": "John Smith",
+		"rating": 4,
+		"review": "Good service, very professional",
+		"date": "2020-01-01",
+		"image": "https://randomuser/3",
+		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	},
+	{
+		"id": 4,
+		"name": "Jane Smith",
+		"rating": 3.5,
+		"review": "Average service, very professional",
+		"date": "2020-01-01",
+		"image": "https://randomuser/4",
+		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	},
+	{
+		"id": 5,
+		"name": "John Doe",
+		"rating": 4.5,
+		"review": "Great service, very professional",
+		"date": "2020-01-01",
+		"image": "https://randomuser/1",
+		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	},
+	{
+		"id": 6,
+		"name": "Jane Doe",
+		"rating": 5,
+		"review": "Excellent service, very professional",
+		"date": "2020-01-01",
+		"image": "https://randomuser/2",
+		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	},
+	{
+		"id": 7,
+		"name": "John Smith",
+		"rating": 4,
+		"review": "Good service, very professional",
+		"date": "2020-01-01",
+		"image": "https://randomuser/3",
+		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	},
+	{
+		"id": 8,
+		"name": "Jane Smith",
+		"rating": 3.5,
+		"review": "Average service, very professional",
+		"date": "2020-01-01",
+		"image": "https://randomuser/4",
+		"details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	}
+]

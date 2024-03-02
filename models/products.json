@@ -1,0 +1,510 @@
+[
+	{
+		"ïd": 1,
+		"name": "PLUMP SHOT LIP SERUM",
+		"price": 20,
+		"image": "https://cdn.dummyjson.com/product-images/59/thumbnail.jpg",
+		"description": "A lip serum that instantly hydrates and naturally plumps the look of lips. This serum is formulated with a unique blend of hyaluronic acid and powerful peptides to help plump the look of lips and reduce the appearance of fine lines. The cooling ceramic applicator helps soothe lips and delivers the perfect amount of product for a smooth, even application.",
+		"tags": [
+			"lip",
+			"serum",
+			"plump",
+			"hydrates",
+			"peptides",
+			"fine lines",
+			"cooling",
+			"ceramic",
+			"applicator",
+			"smooth",
+			"even",
+			"application"
+		],
+		"rating": 4.5,
+		"reviews": 100,
+		"category": "lip",
+		"badges": ["new", "exclusive"],
+		"shades": [
+			{
+				"name": "Dreamy Dolly",
+				"color": "Vibrant Mauve with red & violet shift",
+				"code": "#bd515a"
+			},
+			{
+				"name": "Spellbound Pink",
+				"color": "Opalescent Pink with gold & violet shift",
+				"code": "rgb(244, 149, 181)"
+			},
+			{
+				"name": "Enchanted Berry",
+				"color": "Warm Berry with gold & red shift",
+				"code": "rgb(187, 71, 56)"
+			},
+			{
+				"name": "Starstruck Coral",
+				"color": "Bright Peach with yellow & orange shift",
+				"code": "rgb(205, 101, 67)"
+			},
+			{
+				"name": "Cosmic Fireball",
+				"color": "Fiery Red with gold & orange shift",
+				"code": "rgb(204, 0, 0)"
+			},
+			{
+				"name": "Mystic Magenta",
+				"color": "Rich Magenta with blue & violet shift",
+				"code": "rgb(153, 0, 153)"
+			},
+			{
+				"name": "Astral Blue",
+				"color": "Icy Blue with silver & violet shift",
+				"code": "rgb(0, 0, 255)"
+			},
+			{
+				"name": "Galactic Gold",
+				"color": "Golden Yellow with gold & green shift",
+				"code": "rgb(255, 215, 0)"
+			},
+			{
+				"name": "Celestial Silver",
+				"color": "Shimmering Silver with silver & blue shift",
+				"code": "rgb(192, 192, 192)"
+			},
+			{
+				"name": "Luminous Lilac",
+				"color": "Soft Lavender with blue & pink shift",
+				"code": "rgb(204, 153, 255)"
+			},
+			{
+				"name": "Radiant Ruby",
+				"color": "Rich Ruby with red & pink shift",
+				"code": "rgb(227, 38, 54)"
+			},
+			{
+				"name": "Glowing Garnet",
+				"color": "Deep Red with gold & red shift",
+				"code": "rgb(156, 0, 0)"
+			},
+			{
+				"name": "Lustrous Latte",
+				"color": "Warm Brown with gold & red shift",
+				"code": "rgb(102, 51, 0)"
+			},
+			{
+				"name": "Brilliant Bronze",
+				"color": "Bronze with gold & red shift",
+				"code": "rgb(205, 127, 50)"
+			},
+			{
+				"name": "Dazzling Diamond",
+				"color": "Iridescent White with silver & blue shift",
+				"code": "rgb(255, 255, 255)"
+			},
+			{
+				"name": "Sparkling Sapphire",
+				"color": "Deep Blue with silver & blue shift",
+				"code": "rgb(0, 0, 128)"
+			},
+			{
+				"name": "Twinkling Topaz",
+				"color": "Golden Brown with gold & red shift",
+				"code": "rgb(255, 204, 0)"
+			},
+			{
+				"name": "Glimmering Gold",
+				"color": "Bright Gold with gold & yellow shift",
+				"code": "rgb(255, 215, 0)"
+			},
+			{
+				"name": "Shimmering Silver",
+				"color": "Shimmering Silver with silver & blue shift",
+				"code": "rgb(192, 192, 192)"
+			},
+			{
+				"name": "Radiant Ruby",
+				"color": "Rich Ruby with red & pink shift",
+				"code": "rgb(227, 38, 54)"
+			},
+			{
+				"name": "Glowing Garnet",
+				"color": "Deep Red with gold & red shift",
+				"code": "rgb(156, 0, 0)"
+			},
+			{
+				"name": "Lustrous Latte",
+				"color": "Warm Brown with gold & red shift",
+				"code": "rgb(102, 51, 0)"
+			},
+			{
+				"name": "Brilliant Bronze",
+				"color": "Bronze with gold & red shift",
+				"code": "rgb(205, 127, 50)"
+			},
+			{
+				"name": "Dazzling Diamond",
+				"color": "Iridescent White with silver & blue shift",
+				"code": "rgb(255, 255, 255)"
+			},
+			{
+				"name": "Sparkling Sapphire",
+				"color": "Deep Blue with silver & blue shift",
+				"code": "rgb(0, 0, 128)"
+			},
+			{
+				"name": "Twinkling Topaz",
+				"color": "Golden Brown with gold & red shift",
+				"code": "rgb(255, 204, 0)"
+			},
+			{
+				"name": "Glimmering Gold",
+				"color": "Bright Gold with gold & yellow shift",
+				"code": "rgb(255, 215, 0)"
+			},
+			{
+				"name": "Shimmering Silver",
+				"color": "Shimmering Silver with silver & blue shift",
+				"code": "rgb(192, 192, 192)"
+			}
+		]
+	},
+	{
+		"ïd": 2,
+		"name": "LIP GLOSS",
+		"price": 15,
+		"image": "https://cdn.dummyjson.com/product-images/60/thumbnail.jpg",
+		"description": "A high-shine lip gloss that delivers a beautiful sheen via a non-sticky formula. This gloss is formulated with a unique blend of oils for a super glossy finish, while the pillowy applicator delivers the perfect amount of product for comfortable wear.",
+		"tags": [
+			"lip",
+			"gloss",
+			"high-shine",
+			"beautiful",
+			"sheen",
+			"non-sticky",
+			"oils",
+			"super glossy",
+			"pillowy",
+			"applicator",
+			"comfortable",
+			"wear"
+		],
+		"rating": 4.7,
+		"reviews": 200,
+		"category": "lip",
+		"badges": ["new", "exclusive"],
+		"shades": [
+			{
+				"name": "Spellbound Pink",
+				"color": "Opalescent Pink with gold & violet shift",
+				"code": "rgb(244, 149, 181)"
+			},
+			{
+				"name": "Dreamy Dolly",
+				"color": "Vibrant Mauve with red & violet shift",
+				"code": "#bd515a"
+			},
+			{
+				"name": "Enchanted Berry",
+				"color": "Warm Berry with gold & red shift",
+				"code": "rgb(187, 71, 56)"
+			},
+			{
+				"name": "Starstruck Coral",
+				"color": "Bright Peach with yellow & orange shift",
+				"code": "rgb(205, 101, 67)"
+			},
+			{
+				"name": "Cosmic Fireball",
+				"color": "Fiery Red with gold & orange shift",
+				"code": "rgb(204, 0, 0)"
+			},
+			{
+				"name": "Mystic Magenta",
+				"color": "Rich Magenta with blue & violet shift",
+				"code": "rgb(153, 0, 153)"
+			},
+			{
+				"name": "Astral Blue",
+				"color": "Icy Blue with silver & violet shift",
+				"code": "rgb(0, 0, 255)"
+			},
+			{
+				"name": "Galactic Gold",
+				"color": "Golden Yellow with gold & green shift",
+				"code": "rgb(255, 215, 0)"
+			},
+			{
+				"name": "Celestial Silver",
+				"color": "Shimmering Silver with silver & blue shift",
+				"code": "rgb(192, 192, 192)"
+			},
+			{
+				"name": "Luminous Lilac",
+				"color": "Soft Lavender with blue & pink shift",
+				"code": "rgb(204, 153, 255)"
+			},
+			{
+				"name": "Radiant Ruby",
+				"color": "Rich Ruby with red & pink shift",
+				"code": "rgb(227, 38, 54)"
+			},
+			{
+				"name": "Glowing Garnet",
+				"color": "Deep Red with gold & red shift",
+				"code": "rgb(156, 0, 0)"
+			},
+			{
+				"name": "Lustrous Latte",
+				"color": "Warm Brown with gold & red shift",
+				"code": "rgb(102, 51, 0)"
+			},
+			{
+				"name": "Brilliant Bronze",
+				"color": "Bronze with gold & red shift",
+				"code": "rgb(205, 127, 50)"
+			},
+			{
+				"name": "Dazzling Diamond",
+				"color": "Iridescent White with silver & blue shift",
+				"code": "rgb(255, 255, 255)"
+			},
+			{
+				"name": "Sparkling Sapphire",
+				"color": "Deep Blue with silver & blue shift",
+				"code": "rgb(0, 0, 128)"
+			},
+			{
+				"name": "Twinkling Topaz",
+				"color": "Golden Brown with gold & red shift",
+				"code": "rgb(255, 204, 0)"
+			},
+			{
+				"name": "Glimmering Gold",
+				"color": "Bright Gold with gold & yellow shift",
+				"code": "rgb(255, 215, 0)"
+			},
+			{
+				"name": "Shimmering Silver",
+				"color": "Shimmering Silver with silver & blue shift",
+				"code": "rgb(192, 192, 192)"
+			},
+			{
+				"name": "Radiant Ruby",
+				"color": "Rich Ruby with red & pink shift",
+				"code": "rgb(227, 38, 54)"
+			},
+			{
+				"name": "Glowing Garnet",
+				"color": "Deep Red with gold & red shift",
+				"code": "rgb(156, 0, 0)"
+			},
+			{
+				"name": "Lustrous Latte",
+				"color": "Warm Brown with gold & red shift",
+				"code": "rgb(102, 51, 0)"
+			},
+			{
+				"name": "Brilliant Bronze",
+				"color": "Bronze with gold & red shift",
+				"code": "rgb(205, 127, 50)"
+			},
+			{
+				"name": "Dazzling Diamond",
+				"color": "Iridescent White with silver & blue shift",
+				"code": "rgb(255, 255, 255)"
+			},
+			{
+				"name": "Sparkling Sapphire",
+				"color": "Deep Blue with silver & blue shift",
+				"code": "rgb(0, 0, 128)"
+			},
+			{
+				"name": "Twinkling Topaz",
+				"color": "Golden Brown with gold & red shift",
+				"code": "rgb(255, 204, 0)"
+			},
+			{
+				"name": "Glimmering Gold",
+				"color": "Bright Gold with gold & yellow shift",
+				"code": "rgb(255, 215, 0)"
+			},
+			{
+				"name": "Shimmering Silver",
+				"color": "Shimmering Silver with silver & blue shift",
+				"code": "rgb(192, 192, 192)"
+			}
+		]
+	},
+	{
+		"ïd": 3,
+		"name": "LIPSTICK",
+		"price": 25,
+		"image": "https://cdn.dummyjson.com/product-images/63/thumbnail.jpg",
+		"description": "A full-coverage lipstick that delivers bold, long-lasting color. This lipstick is formulated with a unique blend of oils for a super creamy texture and incredibly smooth application. The high-pigment color glides on easily and stays put for a long-lasting finish.",
+		"tags": [
+			"lip",
+			"lipstick",
+			"full-coverage",
+			"bold",
+			"long-lasting",
+			"color",
+			"oils",
+			"super creamy",
+			"texture",
+			"incredibly",
+			"smooth",
+			"application",
+			"high-pigment",
+			"glides",
+			"easily",
+			"stays",
+			"put",
+			"long-lasting",
+			"finish"
+		],
+		"rating": 4.8,
+		"reviews": 300,
+		"category": "lip",
+		"badges": ["new", "exclusive"],
+		"shades": [
+			"clear",
+			"pink",
+			"red",
+			"nude",
+			"brown",
+			"purple",
+			"orange",
+			"yellow",
+			"green",
+			"blue",
+			"black",
+			"white",
+			"silver",
+			"gold",
+			"rose gold",
+			"copper",
+			"bronze",
+			"platinum",
+			"lavender",
+			"turquoise",
+			"teal",
+			"aqua",
+			"coral",
+			"peach",
+			"magenta",
+			"fuchsia",
+			"violet",
+			"indigo",
+			"maroon",
+			"burgundy",
+			"taupe",
+			"beige",
+			"cream",
+			"champagne",
+			"chocolate",
+			"charcoal",
+			"slate",
+			"stone",
+			"olive",
+			"lime",
+			"mint",
+			"emerald",
+			"forest"
+		]
+	},
+	{
+		"ïd": 4,
+		"name": "LIP LINER",
+		"price": 18,
+		"image": "https://www.ulta.com/lip-liner?productId=pimprod2000006",
+		"description": "A long-wearing lip liner that defines with a precise, creamy finish. This liner is formulated with a unique blend of oils for a super creamy texture and incredibly smooth application. The high-pigment color glides on easily and stays put for a long-lasting finish.",
+		"tags": [
+			"lip",
+			"liner",
+			"long-wearing",
+			"defines",
+			"precise",
+			"creamy",
+			"oils",
+			"super creamy",
+			"texture",
+			"incredibly",
+			"smooth",
+			"application",
+			"high-pigment",
+			"glides",
+			"easily",
+			"stays",
+			"put",
+			"long-lasting",
+			"finish"
+		],
+		"rating": 4.6,
+		"reviews": 400,
+		"category": "lip",
+		"badges": ["new", "exclusive"],
+		"shades": [
+			"clear",
+			"pink",
+			"red",
+			"nude",
+			"brown",
+			"purple",
+			"orange",
+			"yellow",
+			"green",
+			"blue",
+			"black",
+			"white",
+			"silver",
+			"gold",
+			"rose gold",
+			"copper",
+			"bronze",
+			"platinum",
+			"lavender",
+			"turquoise",
+			"teal",
+			"aqua",
+			"coral",
+			"peach",
+			"magenta",
+			"fuchsia",
+			"violet",
+			"indigo",
+			"maroon",
+			"burgundy",
+			"taupe",
+			"beige",
+			"cream",
+			"champagne",
+			"chocolate",
+			"charcoal",
+			"slate",
+			"stone",
+			"olive",
+			"lime",
+			"mint",
+			"emerald",
+			"forest",
+			"jade",
+			"seafoam",
+			"sky",
+			"navy",
+			"cobalt",
+			"periwinkle",
+			"lilac",
+			"orchid",
+			"plum",
+			"berry",
+			"wine",
+			"rust",
+			"cinnamon",
+			"caramel",
+			"honey",
+			"peanut",
+			"almond",
+			"cocoa",
+			"coffee",
+			"espresso"
+		]
+	}
+]

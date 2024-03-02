@@ -1,0 +1,62 @@
+[
+	{
+		"id": 1,
+		"name": "Lip",
+		"description": "Some things are better experienced than explained. Transform your best assets with our Lip must-haves.",
+		"imageUrl": "https://www.sephora.com/productimages/sku/s2027555-main-zoom.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Cheek",
+		"description": "Some things are better experienced than explained. Transform your best assets with our Cheek must-haves.",
+		"imageUrl": "https://www.sephora.com/productimages/sku/s2027555-main-zoom.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Eye",
+		"description": "Some things are better experienced than explained. Transform your best assets with our Eye must-haves.",
+		"imageUrl": "https://www.sephora.com/productimages/sku/s2027555-main-zoom.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Nail",
+		"description": "Some things are better experienced than explained. Transform your best assets with our Nail must-haves.",
+		"imageUrl": "https://www.sephora.com/productimages/sku/s2027555-main-zoom.jpg"
+	},
+	{
+		"id": 5,
+		"name": "Skincare",
+		"description": "Some things are better experienced than explained. Transform your best assets with our Skincare must-haves.",
+		"imageUrl": "https://www.sephora.com/productimages/sku/s2027555-main-zoom.jpg"
+	},
+	{
+		"id": 6,
+		"name": "Hair",
+		"description": "Some things are better experienced than explained. Transform your best assets with our Hair must-haves.",
+		"imageUrl": "https://www.sephora.com/productimages/sku/s2027555-main-zoom.jpg"
+	},
+	{
+		"id": 7,
+		"name": "Body",
+		"description": "Some things are better experienced than explained. Transform your best assets with our Body must-haves.",
+		"imageUrl": "https://www.sephora.com/productimages/sku/s2027555-main-zoom.jpg"
+	},
+	{
+		"id": 8,
+		"name": "Fragrance",
+		"description": "Some things are better experienced than explained. Transform your best assets with our Fragrance must-haves.",
+		"imageUrl": "https://www.sephora.com/productimages/sku/s2027555-main-zoom.jpg"
+	},
+	{
+		"id": 9,
+		"name": "Tools",
+		"description": "Some things are better experienced than explained. Transform your best assets with our Tools must-haves.",
+		"imageUrl": "https://www.sephora.com/productimages/sku/s2027555-main-zoom.jpg"
+	},
+	{
+		"id": 10,
+		"name": "Gifts",
+		"description": "Some things are better experienced than explained. Transform your best assets with our Gifts must-haves.",
+		"imageUrl": "https://www.sephora.com/productimages/sku/s2027555-main-zoom.jpg"
+	}
+]
