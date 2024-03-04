@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const { createUser, getUsers } = require("./controllers/users");
+const { createUser } = require("./controllers/users");
 
 const app = express();
 const PORT = process.env.PORT | 8080;
@@ -15,9 +15,8 @@ app.use("/", express.static(path.join(__dirname, "public")));
 app.use("/", require("./routes/root"));
 app.use("/products", require("./routes/products"));
 app.use("/categories", require("./routes/categories"));
-app.use("/users", require("./routes/users"));
-app.use("/cart", require("./routes/cart"));
 app.use("/reviews", require("./routes/reviews"));
+app.use("/users", require("./routes/users"));
 
 // unwanted routes handler
 app.all("*", (req, res) => {
