@@ -2,11 +2,13 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient({ log: ["query"] });
 
 const createCategory = async (req, res) => {
-	const { name } = req.body;
+	const { name, description, file } = req.body;
 	try {
 		const category = await prisma.category.create({
 			data: {
 				name,
+				description,
+				imageURL: file || null,
 			},
 		});
 		res.status(201).json(category);

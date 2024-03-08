@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const { createUser } = require("./controllers/users");
+const multer = require("multer");
 
 const app = express();
 const PORT = process.env.PORT | 8080;
@@ -17,6 +18,32 @@ app.use("/products", require("./routes/products"));
 app.use("/categories", require("./routes/categories"));
 app.use("/reviews", require("./routes/reviews"));
 app.use("/users", require("./routes/users"));
+
+// multer
+const storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		cb(null, path.join(__dirname, "public", "uploads"));
+		console.log(path.join(__dirname, "public", "uploads"));
+		console.log("file: ", file);
+	},
+	filename: function (req, file, cb) {
+		cb(
+			null,
+			file.fieldname + "_" + Date.now() + path.extname(file.originalname)
+		);
+	},
+});
+
+const upload = multer({ storage: storage });
+
+app.post("/upload", upload.single("file"), (req, res) => {
+	console.log(req.file);
+	try {
+		res.status(200).send({ path: `/uploads/${req.file.filename}` });
+	} catch (error) {
+		res.status(400).send({ error: error.message });
+	}
+});
 
 // unwanted routes handler
 app.all("*", (req, res) => {

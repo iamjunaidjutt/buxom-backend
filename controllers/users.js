@@ -1,5 +1,6 @@
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient({ log: ["query"] });
+const bcrypt = require("bcryptjs");
 
 const createUser = async (req, res) => {
 	const { firstname, lastname, email, password, phone, role } = req.body;
@@ -8,6 +9,10 @@ const createUser = async (req, res) => {
 		console.log(firstname, lastname, email, password, phone, role);
 		return res.status(400).json({ error: "All fields are required!" });
 	}
+
+	// Hash the password
+	const salt = await bcrypt.genSalt(10);
+	const hashedPassword = await bcrypt.hash(password, salt);
 
 	let user;
 
@@ -18,7 +23,7 @@ const createUser = async (req, res) => {
 				firstname,
 				lastname,
 				email,
-				password,
+				hashedPassword,
 				phone,
 				role,
 				month,
@@ -35,7 +40,7 @@ const createUser = async (req, res) => {
 					first_name: firstname,
 					last_name: lastname,
 					email,
-					password,
+					password: hashedPassword,
 					phone,
 					role,
 					UserPreference: {
@@ -62,7 +67,7 @@ const createUser = async (req, res) => {
 					first_name: firstname,
 					last_name: lastname,
 					email,
-					password,
+					password: hashedPassword,
 					phone,
 					role,
 				},
@@ -89,10 +94,21 @@ const getUser = async (req, res) => {
 				email,
 			},
 		});
-		if (user.password !== password || user.role !== role) {
-			console.log("User found: ", user);
-			res.status(401).json({ error: "Invalid credentials!" });
+
+		if (!user) {
+			return res.status(404).json({ error: "User not found!" });
 		}
+
+		// Compare the password & Role
+		const validPassword = await bcrypt.compare(password, user.password);
+		if (!validPassword) {
+			return res.status(400).json({ error: "Invalid password!" });
+		}
+
+		if (user.role !== role) {
+			return res.status(401).json({ error: "Unauthorized!" });
+		}
+
 		console.log("User: ", user);
 		res.status(200).json(user);
 	} catch (error) {
