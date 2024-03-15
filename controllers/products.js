@@ -126,16 +126,16 @@ const updateProduct = async (req, res) => {
 					},
 				},
 				shades: {
-					connect: shades,
+					connect: shades.map((shade) => ({ id: shade })),
 				},
 				Tags: {
-					connect: tags,
+					connect: tags.map((tag) => ({ id: tag })),
 				},
 				Badges: {
-					connect: badges,
+					connect: badges.map((badge) => ({ id: badge })),
 				},
 				Image: {
-					connect: images,
+					connect: images.map((image) => ({ id: image })),
 				},
 			},
 			include: {

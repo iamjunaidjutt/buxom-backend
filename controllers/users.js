@@ -119,7 +119,28 @@ const getUser = async (req, res) => {
 	}
 };
 
+const getUsers = async (req, res) => {
+	try {
+		const users = await prisma.user.findMany({
+			include: {
+				UserPreference: true,
+			},
+		});
+		if (!users) {
+			return res.status(404).json({ error: "No users found!" });
+		}
+		console.log("Users: ", users);
+		res.status(200).json(users);
+	} catch (error) {
+		res.status(500).json({ error: "Error fetching users!" });
+		console.error("Error: ", error);
+	} finally {
+		prisma.$disconnect();
+	}
+};
+
 module.exports = {
 	createUser,
 	getUser,
+	getUsers,
 };
