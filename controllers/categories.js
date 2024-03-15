@@ -39,6 +39,48 @@ const getCategory = async (req, res) => {
 	}
 };
 
+const deleteCategory = async (req, res) => {
+	const { id } = req.params;
+	try {
+		const category = await prisma.category.delete({
+			where: {
+				id,
+			},
+		});
+		res.status(200).json(category);
+		console.log("Category deleted successfully: ", category);
+	} catch (error) {
+		res.error(404).json({ error: "Category not deleted!" });
+		console.error("Error: ", error);
+	} finally {
+		prisma.$disconnect();
+	}
+};
+
+const updateCategory = async (req, res) => {
+	const { id } = req.params;
+	const { name, description, file } = req.body;
+	try {
+		const category = await prisma.category.update({
+			where: {
+				id,
+			},
+			data: {
+				name,
+				description,
+				imageURL: file === "null" ? null : file,
+			},
+		});
+		res.status(200).json(category);
+		console.log("Category updated successfully: ", category);
+	} catch (error) {
+		res.error(404).json({ error: "Category not updated!" });
+		console.error("Error: ", error);
+	} finally {
+		prisma.$disconnect();
+	}
+};
+
 const getCategories = async (req, res) => {
 	try {
 		const categories = await prisma.category.findMany();
@@ -56,4 +98,6 @@ module.exports = {
 	createCategory,
 	getCategories,
 	getCategory,
+	deleteCategory,
+	updateCategory,
 };

@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const { createUser } = require("./controllers/users");
 const multer = require("multer");
 
 const app = express();
@@ -11,13 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 app.use("/", express.static(path.join(__dirname, "public")));
-
-//routes
-app.use("/", require("./routes/root"));
-app.use("/products", require("./routes/products"));
-app.use("/categories", require("./routes/categories"));
-app.use("/reviews", require("./routes/reviews"));
-app.use("/users", require("./routes/users"));
 
 // multer
 const storage = multer.diskStorage({
@@ -44,6 +36,17 @@ app.post("/upload", upload.single("file"), (req, res) => {
 		res.status(400).send({ error: error.message });
 	}
 });
+
+//routes
+app.use("/", require("./routes/root"));
+app.use("/products", require("./routes/products"));
+app.use("/categories", require("./routes/categories"));
+app.use("/reviews", require("./routes/reviews"));
+app.use("/users", require("./routes/users"));
+app.use("/shades", require("./routes/shades"));
+app.use("/tags", require("./routes/tags"));
+app.use("/badges", require("./routes/badges"));
+app.use("/images", require("./routes/images"));
 
 // unwanted routes handler
 app.all("*", (req, res) => {

@@ -23,9 +23,10 @@ model User {
   created_at     DateTime        @default(now())
   updated_at     DateTime        @updatedAt
   role           Role            @default(USER)
-  Order          Order[]
+  Order          Orders[]
   Review         Review[]
   UserPreference UserPreference?
+  Cart           Cart?
 }
 
 model UserPreference {
@@ -61,26 +62,48 @@ model Product {
   description  String?
   price        Float
   stock        Int
-  tags         Json
-  imageURLs    Json
-  badges       Json
   created_at   DateTime       @default(now())
   updated_at   DateTime       @updatedAt
-  shades       Shade[]
   category     Category       @relation(fields: [categoryId], references: [id])
   categoryId   String
-  orders       Order[]
-  OrderProduct OrderProduct[]
+  shades       Shade[]
+  Tags         Tag[]
+  Badges       Badge[]
+  Image        Image[]
   Review       Review[]
+  Cart         Cart[]
+  Orders       Orders[]
+  OrderProduct OrderProduct[]
+}
+
+model Tag {
+  id         String    @id @default(uuid())
+  name       String
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+  Product    Product[]
+}
+
+model Badge {
+  id         String    @id @default(uuid())
+  name       String
+  created_at DateTime  @default(now())
+  updated_at DateTime  @updatedAt
+  Product    Product[]
+}
+
+model Image {
+  id        String    @id @default(uuid())
+  imageURLs String
+  product   Product[]
 }
 
 model Shade {
-  id          String   @id @default(uuid())
+  id          String    @id @default(uuid())
   name        String
   description String?
   code        String
-  Product     Product? @relation(fields: [productId], references: [id])
-  productId   String?
+  Product     Product[]
 }
 
 model Review {
@@ -95,7 +118,18 @@ model Review {
   productId  String
 }
 
-model Order {
+model Cart {
+  id         String   @id @default(uuid())
+  quantity   Int
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String   @unique
+  Product    Product? @relation(fields: [productId], references: [id])
+  productId  String?
+}
+
+model Orders {
   id           String         @id @default(uuid())
   total        Float
   created_at   DateTime       @default(now())
@@ -109,7 +143,7 @@ model Order {
 model OrderProduct {
   id        String  @id @default(uuid())
   quantity  Int
-  order     Order   @relation(fields: [orderId], references: [id])
+  order     Orders  @relation(fields: [orderId], references: [id])
   orderId   String
   product   Product @relation(fields: [productId], references: [id])
   productId String
