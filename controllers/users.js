@@ -3,6 +3,7 @@ const prisma = new PrismaClient({ log: ["query"] });
 const bcrypt = require("bcryptjs");
 
 const createUser = async (req, res) => {
+	console.log(req.body);
 	const { firstname, lastname, email, password, phone, role } = req.body;
 
 	if (!firstname || !lastname || !email || !password || !phone || !role) {
@@ -10,32 +11,35 @@ const createUser = async (req, res) => {
 		return res.status(400).json({ error: "All fields are required!" });
 	}
 
+	// check if user already exists
+	const userExists = await prisma.user.findUnique({
+		where: {
+			email,
+		},
+	});
+	if (userExists) {
+		return res.status(400).json({ error: "User already exists!" });
+	}
+
+	// log the role
+	console.log("Role: ", role);
+
 	// Hash the password
 	const salt = await bcrypt.genSalt(10);
 	const hashedPassword = await bcrypt.hash(password, salt);
 
-	let user;
+	// log the hashed password
+	console.log("Hashed Password: ", hashedPassword);
 
-	if (role == "USER") {
+	if (role === "USER") {
 		const { month, day, newsLetter, smsUpdates } = req.body;
-		if (!month || !day || !newsLetter || !smsUpdates) {
-			console.log(
-				firstname,
-				lastname,
-				email,
-				hashedPassword,
-				phone,
-				role,
-				month,
-				day,
-				newsLetter,
-				smsUpdates
-			);
-			return res.status(400).json({ error: "All fields are required!" });
+
+		if (typeof day === "string") {
+			day = parseInt(day);
 		}
 
 		try {
-			user = await prisma.user.create({
+			const user = await prisma.user.create({
 				data: {
 					first_name: firstname,
 					last_name: lastname,
@@ -46,7 +50,7 @@ const createUser = async (req, res) => {
 					UserPreference: {
 						create: {
 							month,
-							day: parseInt(day),
+							day,
 							newsLetter,
 							smsUpdates,
 						},
@@ -56,11 +60,16 @@ const createUser = async (req, res) => {
 					UserPreference: true,
 				},
 			});
+			console.log("User: ", user);
+			res.status(201).json(user);
 		} catch (error) {
 			res.status(500).json({ error: "User not created!" });
 			console.error("Error: ", error);
+		} finally {
+			prisma.$disconnect();
 		}
 	} else {
+		console.log("Admin: ", role);
 		try {
 			user = await prisma.user.create({
 				data: {
@@ -72,18 +81,40 @@ const createUser = async (req, res) => {
 					role,
 				},
 			});
+			console.log("User: ", user);
+			res.status(201).json(user);
 		} catch (error) {
 			res.status(500).json({ error: "User not created!" });
 			console.error("Error: ", error);
+		} finally {
+			prisma.$disconnect();
 		}
 	}
+};
 
-	if (user) {
-		res.status(201).json(user);
-		console.log("User created successfully: ", user);
+const getUserById = async (req, res) => {
+	const { id } = req.params;
+	try {
+		const user = await prisma.user.findUnique({
+			where: {
+				id,
+			},
+			include: {
+				UserPreference: true,
+			},
+		});
+		if (!user) {
+			return res.status(404).json({ error: "User not found! " + id });
+		}
+
+		console.log("User: ", user);
+		res.status(200).json(user);
+	} catch (error) {
+		res.status(404).json({ error: "User not found! " + id });
+		console.error("Error: ", error);
+	} finally {
+		prisma.$disconnect();
 	}
-
-	prisma.$disconnect();
 };
 
 const getUser = async (req, res) => {
@@ -139,8 +170,88 @@ const getUsers = async (req, res) => {
 	}
 };
 
+const updateUser = async (req, res) => {
+	const { id } = req.params;
+	const { firstname, lastname, email, password, phone, role } = req.body;
+
+	if (!firstname || !lastname || !email || !password || !phone || !role) {
+		return res.status(400).json({ error: "All fields are required!" });
+	}
+
+	// Hash the password
+	const salt = await bcrypt.genSalt(10);
+	const hashedPassword = await bcrypt.hash(password, salt);
+
+	if (role === "USER") {
+		const { month, day, newsLetter, smsUpdates } = req.body;
+
+		if (typeof day === "string") {
+			day = parseInt(day);
+		}
+
+		try {
+			const user = await prisma.user.update({
+				where: {
+					id,
+				},
+				data: {
+					first_name: firstname,
+					last_name: lastname,
+					email,
+					password: hashedPassword,
+					phone,
+					role,
+					UserPreference: {
+						update: {
+							month,
+							day,
+							newsLetter,
+							smsUpdates,
+						},
+					},
+				},
+				include: {
+					UserPreference: true,
+				},
+			});
+			console.log("User: ", user);
+			res.status(200).json(user);
+		} catch (error) {
+			res.status(500).json({ error: "User not updated!" });
+			console.error("Error: ", error);
+		} finally {
+			prisma.$disconnect();
+		}
+	} else {
+		try {
+			user = await prisma.user.update({
+				where: {
+					id,
+				},
+				data: {
+					first_name: firstname,
+					last_name: lastname,
+					email,
+					password: hashedPassword,
+					phone,
+					role,
+				},
+			});
+			console.log("User: ", user);
+			res.status(200).json(user);
+		} catch (error) {
+			res.status(500).json({ error: "User not updated!" });
+			console.error("Error: ", error);
+		} finally {
+			prisma.$disconnect();
+		}
+	}
+};
+
 module.exports = {
 	createUser,
 	getUser,
 	getUsers,
+	getUserById,
+	updateUser,
 };
