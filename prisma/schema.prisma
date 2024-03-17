@@ -49,17 +49,18 @@ enum Role {
 model Category {
   id          String    @id @default(uuid())
   name        String
-  description String?
+  description String?   @db.VarChar(2000)
   created_at  DateTime  @default(now())
   updated_at  DateTime  @updatedAt
   imageURL    String?
+  titleLine   String?
   products    Product[]
 }
 
 model Product {
   id           String         @id @default(uuid())
   name         String
-  description  String?
+  description  String?        @db.VarChar(2000)
   price        Float
   stock        Int
   created_at   DateTime       @default(now())
@@ -101,7 +102,7 @@ model Image {
 model Shade {
   id          String    @id @default(uuid())
   name        String
-  description String?
+  description String?   @db.VarChar(2000)
   code        String
   Product     Product[]
 }
