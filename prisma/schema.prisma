@@ -67,6 +67,7 @@ model Product {
   updated_at   DateTime       @updatedAt
   category     Category       @relation(fields: [categoryId], references: [id])
   categoryId   String
+  thumbnail    String?
   shades       Shade[]
   Tags         Tag[]
   Badges       Badge[]
@@ -88,6 +89,7 @@ model Tag {
 model Badge {
   id         String    @id @default(uuid())
   name       String
+  color      String?
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
   Product    Product[]

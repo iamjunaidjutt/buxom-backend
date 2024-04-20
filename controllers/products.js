@@ -7,6 +7,7 @@ const createProduct = async (req, res) => {
 			name,
 			price,
 			description,
+			thumbnail,
 			stock,
 			category,
 			shades,
@@ -27,6 +28,7 @@ const createProduct = async (req, res) => {
 				price,
 				description,
 				stock,
+				thumbnail,
 				category: {
 					connect: {
 						id: category,
@@ -76,7 +78,28 @@ const getProducts = async (req, res) => {
 	}
 };
 
-const getProduct = async (req, res) => {
+const getProductsByCategory = async (req, res) => {
+	try {
+		const { id } = req.params;
+		const products = await prisma.product.findMany({
+			where: {
+				categoryId: id,
+			},
+			include: {
+				category: true,
+				Tags: true,
+				Badges: true,
+				Image: true,
+				shades: true,
+			},
+		});
+		res.status(200).json(products);
+	} catch (error) {
+		res.status(400).json({ error: error.message });
+	}
+};
+
+const getProductById = async (req, res) => {
 	try {
 		const { id } = req.params;
 		const product = await prisma.product.findUnique({
@@ -98,6 +121,7 @@ const getProduct = async (req, res) => {
 };
 
 const updateProduct = async (req, res) => {
+	console.log(req.body);
 	try {
 		const { id } = req.params;
 		const {
@@ -105,11 +129,12 @@ const updateProduct = async (req, res) => {
 			price,
 			description,
 			stock,
+			thumbnail,
 			category,
 			shades,
-			tags,
-			badges,
-			images,
+			Tags,
+			Badges,
+			Image,
 		} = req.body;
 		const product = await prisma.product.update({
 			where: {
@@ -120,6 +145,7 @@ const updateProduct = async (req, res) => {
 				price,
 				description,
 				stock,
+				thumbnail,
 				category: {
 					connect: {
 						id: category,
@@ -129,13 +155,13 @@ const updateProduct = async (req, res) => {
 					connect: shades.map((shade) => ({ id: shade })),
 				},
 				Tags: {
-					connect: tags.map((tag) => ({ id: tag })),
+					connect: Tags.map((tag) => ({ id: tag })),
 				},
 				Badges: {
-					connect: badges.map((badge) => ({ id: badge })),
+					connect: Badges.map((badge) => ({ id: badge })),
 				},
 				Image: {
-					connect: images.map((image) => ({ id: image })),
+					connect: Image.map((image) => ({ id: image })),
 				},
 			},
 			include: {
@@ -169,7 +195,8 @@ const deleteProduct = async (req, res) => {
 module.exports = {
 	createProduct,
 	getProducts,
-	getProduct,
+	getProductById,
+	getProductsByCategory,
 	updateProduct,
 	deleteProduct,
 };

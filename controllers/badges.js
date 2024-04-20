@@ -2,11 +2,12 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient({ log: ["query"] });
 
 const createBadge = async (req, res) => {
-	const { name } = req.body;
+	const { name, color } = req.body;
 	try {
 		const badge = await prisma.badge.create({
 			data: {
 				name,
+				color,
 			},
 		});
 		res.status(201).json(badge);
@@ -70,7 +71,7 @@ const deleteBadge = async (req, res) => {
 
 const updateBadge = async (req, res) => {
 	const { id } = req.params;
-	const { name } = req.body;
+	const { name, color } = req.body;
 	try {
 		const badge = await prisma.badge.update({
 			where: {
@@ -78,6 +79,7 @@ const updateBadge = async (req, res) => {
 			},
 			data: {
 				name,
+				color,
 			},
 		});
 		res.status(200).json(badge);
